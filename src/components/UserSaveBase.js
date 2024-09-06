@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import NewUserForm from './NewUserForm';
 
-const UserSavePage = () => {
+const UserSaveBase = () => {
   const { id } = useParams();
 
   return (
@@ -13,4 +13,4 @@ const UserSavePage = () => {
   );
 };
 
-export default UserSavePage;
+export default UserSaveBase;

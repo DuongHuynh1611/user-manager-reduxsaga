@@ -5,11 +5,12 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createUserRequest, updateUserRequest, fetchUserRequest } from '../actions/users';
 
-const NewUserForm = ({ users, createUserRequest, updateUserRequest, fetchUserRequest, user }) => {
+const NewUserForm = ({ users, createUserRequest, updateUserRequest, fetchUserRequest, user,onCancel }) => {
   const [isEditing, setIsEditing] = useState(false);
   const { id } = useParams();
   const navigate = useNavigate();
   const [form] = Form.useForm();
+  const [ setFormVisible] = useState(false);
 
   useEffect(() => {
     if (id && id !== 'create') {
@@ -46,6 +47,10 @@ const NewUserForm = ({ users, createUserRequest, updateUserRequest, fetchUserReq
     navigate('/');
   };
 
+  const handleCancelForm = () => {
+    setFormVisible(false);
+  };
+
   return (
     <div className="container">
       <h1>{id === 'create' ? 'Create User' : 'Edit User'}</h1>
@@ -69,6 +74,11 @@ const NewUserForm = ({ users, createUserRequest, updateUserRequest, fetchUserReq
             {isEditing ? 'Update' : 'Create'}
           </Button>
         </Form.Item>
+        <Form.Item>
+        <Button type="default" onCancel={handleCancelForm} style={{ width: '100%' }}>
+          Cancel
+        </Button>
+      </Form.Item>
       </Form>
     </div>
   );

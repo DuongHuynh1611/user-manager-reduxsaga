@@ -4,7 +4,8 @@ module.exports = function(app) {
   app.use(
     '/api',
     createProxyMiddleware({
-      target: 'http://localhost:3001',
+      target: 'https://cors-anywhere.herokuapp.com/https://rem.dbwebb.se',
+      // target: 'https://rem.dbwebb.se',
       changeOrigin: true,
     })
   );

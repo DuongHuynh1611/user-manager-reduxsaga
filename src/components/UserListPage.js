@@ -14,7 +14,6 @@ const UserListPage = ({ onEditUser }) => {
 
   const columns = [
     {
-      title: 'User',
       key: 'user',
       render: (text, record) => <UserListItem user={record} onEditUser={onEditUser} />
     }
@@ -29,7 +28,7 @@ const UserListPage = ({ onEditUser }) => {
   }
 
   return (
-    <Card title="Users" bordered={false} style={{ marginTop: '20px' }}>
+    <Card  bordered={false} style={{ marginTop: '20px' }}>
       <Table
         columns={columns}
         dataSource={items}

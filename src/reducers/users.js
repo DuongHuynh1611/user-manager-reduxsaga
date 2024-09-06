@@ -23,8 +23,8 @@ function usersReducer(state = INITIAL_STATE, action) {
         items: state.items.filter(user => user.id !== action.payload.userId)
       };
 
-    case Types.USERS_ERROR:
-      return { ...state, error: action.payload.error };
+    // case Types.USERS_ERROR:
+    //   return { ...state, error: action.payload.error };
 
     case Types.UPDATE_USER_REQUEST:
       return {

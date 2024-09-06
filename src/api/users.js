@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 const apiClient = axios.create({
-    baseURL: 'http://localhost:3001/api',
+    // baseURL: 'https://rem.dbwebb.se/api',
+    baseURL: 'https://cors-anywhere.herokuapp.com/https://rem.dbwebb.se/api',
     headers: {
         'Content-Type': 'application/json',
     }

@@ -1,9 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Layout, Menu, Button, Row, Col } from 'antd';
+import { Layout, Button, Row, Col } from 'antd';
 import UserListPage from './UserListPage';  
 
-const { Header, Content, Footer } = Layout;
+const { Content} = Layout;
 
 const App = () => {
   const navigate = useNavigate();
@@ -22,12 +22,6 @@ const App = () => {
 
   return (
     <Layout style={{ minHeight: '100vh' }}>
-      <Header>
-        <div className="logo" />
-        <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
-          <Menu.Item key="1">Users</Menu.Item>
-        </Menu>
-      </Header>
       <Content style={{ margin: '0 16px' }}>
         <Row justify="center" style={{ marginTop: '20px' }}>
           <Col span={20}>
@@ -39,7 +33,6 @@ const App = () => {
           </Col>
         </Row>
       </Content>
-      <Footer style={{ textAlign: 'center' }}>Tran Gia Huy with Love</Footer>
     </Layout>
   );
 };
